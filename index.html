@@ -14,18 +14,18 @@
     <title>Numbers</title>
 </head>
 <body class="min-h-screen h-full">
-    <main class="py-11 px-9 md:pb-[100px] lg:pt-[70px] lg:px-[120px] w-full h-full min-h-screen grid gap-11 md:justify-center items-center md:content-center">
+    <main class="py-11 px-9 md:pb-[100px] lg:pt-[70px] lg:px-[120px] w-full h-full min-h-screen grid gap-11 md:justify-center items-center md:content-center ">
         <!-- Logo da Numbers -->
         <img src="assets/logo.png" alt="logo da Numbers" class="justify-self-center md:justify-self-start logo md:pb-[40px]">
 
         <!-- Texto introdutório -->
-        <div class=" h-full description">
-            <p class="overline text-transparent bg-gradient-to-r from-[#C7C9CC] to-[#3D3D3D] bg-clip-text uppercase">Online - gratuito</p>
-            <h1 class="displayM text-content-primary uppercase xl:displayL">Sorteador de números</h1>
+        <div class=" h-full description flex flex-col md:justify-end">
+            <p class="overlineT text-transparent bg-gradient-to-r from-[#C7C9CC] to-[#3D3D3D] bg-clip-text uppercase">Online - gratuito</p>
+            <h1 class="displayM text-content-primary uppercase xl:displayL">Sorteador<br> de números</h1>
         </div>
 
         <!-- Formulário -->
-        <form class="grid gap-10">
+        <form class="grid gap-10" id="sort">
             <!-- Texto explicativo -->
             <div>
                 <h3 class="uppercase text-content-primary lM">Quero sortear:</h3>
@@ -37,26 +37,28 @@
                 <div class="flex gap-3 justify-center">
                     <div class="w-[86px] pb-2" id="contador-container">
                         <p class="lM text-content-secondary text-center" id="text">NÚMEROS</p>
-                        <input type="text" class="displayS text-content-primary bg-background-secondary w-full h-14 rounded-lg text-center" value="1" required>
+                        <input type="text" class="displayS text-content-primary bg-background-secondary w-full h-14 rounded-lg text-center" id="numeros" value="1" required>
                     </div>
 
                     <!-- Input de sorteio dos números -->
                     <div class="w-[86px] pb-2" id="contador-container">
                         <p class="lM text-content-secondary text-center" id="text">DE</p>
-                        <input type="text" class="displayS text-content-primary bg-background-secondary w-full h-14 rounded-lg text-center" value="1" required>
+                        <input type="text" class="displayS text-content-primary bg-background-secondary w-full h-14 rounded-lg text-center" id="de" value="1" required>
                     </div>
 
                     <!-- Input de sorteio dos números -->
                     <div class="w-[86px] pb-2" id="contador-container">
                         <p class="lM text-content-secondary text-center" id="text">À</p>
-                        <input type="text" class="displayS text-content-primary bg-background-secondary w-full h-14 rounded-lg text-center" value="100" required>
+                        <input type="text" class="displayS text-content-primary bg-background-secondary w-full h-14 rounded-lg text-center" id="ate" value="100" required>
                     </div>
-            </div>
+                </div>
+
+                <p id="errorText" class="text-sm text-red-600 py-3 hidden"></p>
 
             <!-- Botão que pergunta se quer ou não que os números se repitam -->
                 <div class="flex gap-2 items-center ">
                     <label for="repetir">
-                        <input type="checkbox" id="repetir" class="hidden" required>
+                        <input type="checkbox" id="repetir" name="repetir" class="hidden">
                         <div class="checkbox"><div class="circulo"></div></div>
                     </label>
                     <p class="text-content-primary pS">Não repetir número</p>
@@ -67,8 +69,20 @@
             <button type="submit" class="h-[56px] w-full bg-background-tertiary text-content-primary lM flex items-center justify-center gap-2 rounded-lg">SORTEAR <img src="assets/Frame.svg"></button>
         </form>
 
+        <!-- Números sorteados -->
+        <form class="flex flex-col gap-10 justify-center items-center md:w-[350px] text-center w-full hidden" id="sortedForm">
+            <div>
+                <h3 class="lM text-content-primary">RESULTADO DO SORTEIO</h3>
+                <p class="text-content-secondary overlineT" id="results"></p>
+            </div>
+            <div class="grid gap-6" id="numbersSorted-container"></div>
+            
+
+            <button type="submit" class="h-[56px] w-full bg-background-tertiary text-content-primary lM flex items-center justify-center gap-2 rounded-lg sort-again">SORTEAR NOVAMENTE <img src="assets/again.svg"></button>
+        </form>
+
         <!-- Perguntas frequentes -->
-        <div class="grid gap-9 questions">
+        <div class="grid gap-9 questions md:self-start">
             <div class="flex gap-2 items-start">
                 <img src="assets/duvida.svg">
                 <div>
@@ -86,5 +100,7 @@
             </div>
         </div>
     </main>
+
+    <script src="src/scripts.js"></script>
 </body>
 </html>

@@ -61,7 +61,14 @@ function ({ addComponents, theme }) {
             lineHeight: '130%'
         },
 
-        '.overline': {
+        '.overlineL': {
+            fontFamily: theme('fontFamily.robotoMono'),
+            fontSize: '3rem',
+            fontWeight: '700',
+            lineHeight: '150%'
+        },
+
+        '.overlineT': {
             fontFamily: theme('fontFamily.robotoMono'),
             fontSize: '1rem',
             fontWeight: '700',

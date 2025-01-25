@@ -568,7 +568,14 @@ video {
   line-height: 130%;
 }
 
-.overline {
+.overlineL {
+  font-family: Roboto Mono, serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.overlineT {
   font-family: Roboto Mono, serif;
   font-size: 1rem;
   font-weight: 700;
@@ -596,10 +603,6 @@ video {
   line-height: 150%;
 }
 
-.float-right {
-  float: right;
-}
-
 .flex {
   display: flex;
 }
@@ -624,10 +627,6 @@ video {
   height: 100%;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .min-h-screen {
   min-height: 100vh;
 }
@@ -640,8 +639,16 @@ video {
   width: 100%;
 }
 
-.content-center {
-  align-content: center;
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .items-start {
@@ -650,10 +657,6 @@ video {
 
 .items-center {
   align-items: center;
-}
-
-.justify-end {
-  justify-content: flex-end;
 }
 
 .justify-center {
@@ -674,6 +677,10 @@ video {
 
 .gap-3 {
   gap: 0.75rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .gap-9 {
@@ -727,12 +734,27 @@ video {
   padding-bottom: 2.75rem;
 }
 
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .pb-2 {
   padding-bottom: 0.5rem;
 }
 
 .text-center {
   text-align: center;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .uppercase {
@@ -763,17 +785,9 @@ video {
   color: transparent;
 }
 
-.overline {
-  text-decoration-line: overline;
-}
-
-@media (min-width: 768px) {
-  .md\:displayL {
-    font-family: Sora, serif;
-    font-size: 4.5rem;
-    font-weight: 800;
-    line-height: 130%;
-  }
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity, 1));
 }
 
 @media (min-width: 1280px) {
@@ -786,20 +800,8 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:col-\[1\] {
-    grid-column: 1;
-  }
-
-  .md\:col-\[2\] {
-    grid-column: 2;
-  }
-
-  .md\:w-1\/2 {
-    width: 50%;
-  }
-
-  .md\:grid-cols-\[auto_1fr\] {
-    grid-template-columns: auto 1fr;
+  .md\:w-\[350px\] {
+    width: 350px;
   }
 
   .md\:content-center {
@@ -814,28 +816,16 @@ video {
     justify-content: center;
   }
 
-  .md\:gap-0 {
-    gap: 0px;
+  .md\:self-start {
+    align-self: flex-start;
   }
 
   .md\:justify-self-start {
     justify-self: start;
   }
 
-  .md\:pb-40 {
-    padding-bottom: 10rem;
-  }
-
-  .md\:pb-10 {
-    padding-bottom: 2.5rem;
-  }
-
   .md\:pb-\[100px\] {
     padding-bottom: 100px;
-  }
-
-  .md\:pb-\[80px\] {
-    padding-bottom: 80px;
   }
 
   .md\:pb-\[40px\] {
@@ -844,21 +834,6 @@ video {
 }
 
 @media (min-width: 1024px) {
-  .lg\:py-\[19\] {
-    padding-top: 19;
-    padding-bottom: 19;
-  }
-
-  .lg\:py-\[\] {
-    padding-top: ;
-    padding-bottom: ;
-  }
-
-  .lg\:py-\[70px\] {
-    padding-top: 70px;
-    padding-bottom: 70px;
-  }
-
   .lg\:px-\[120px\] {
     padding-left: 120px;
     padding-right: 120px;

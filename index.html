@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="stylesheet" href="src/styles.css">
+    
+    <title>Numbers</title>
+</head>
+<body class="min-h-screen h-full">
+    <main class="py-11 px-9 md:pb-[100px] lg:pt-[70px] lg:px-[120px] w-full h-full min-h-screen grid gap-11 md:justify-center items-center md:content-center">
+        <!-- Logo da Numbers -->
+        <img src="assets/logo.png" alt="logo da Numbers" class="justify-self-center md:justify-self-start logo md:pb-[40px]">
+
+        <!-- Texto introdutório -->
+        <div class=" h-full description">
+            <p class="overline text-transparent bg-gradient-to-r from-[#C7C9CC] to-[#3D3D3D] bg-clip-text uppercase">Online - gratuito</p>
+            <h1 class="displayM text-content-primary uppercase xl:displayL">Sorteador de números</h1>
+        </div>
+
+        <!-- Formulário -->
+        <form class="grid gap-10">
+            <!-- Texto explicativo -->
+            <div>
+                <h3 class="uppercase text-content-primary lM">Quero sortear:</h3>
+                <p class="text-content-tertiary pM">Defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
+            </div>
+
+            <div>
+                <!-- Input de sorteio dos números -->
+                <div class="flex gap-3 justify-center">
+                    <div class="w-[86px] pb-2" id="contador-container">
+                        <p class="lM text-content-secondary text-center" id="text">NÚMEROS</p>
+                        <input type="text" class="displayS text-content-primary bg-background-secondary w-full h-14 rounded-lg text-center" value="1" required>
+                    </div>
+
+                    <!-- Input de sorteio dos números -->
+                    <div class="w-[86px] pb-2" id="contador-container">
+                        <p class="lM text-content-secondary text-center" id="text">DE</p>
+                        <input type="text" class="displayS text-content-primary bg-background-secondary w-full h-14 rounded-lg text-center" value="1" required>
+                    </div>
+
+                    <!-- Input de sorteio dos números -->
+                    <div class="w-[86px] pb-2" id="contador-container">
+                        <p class="lM text-content-secondary text-center" id="text">À</p>
+                        <input type="text" class="displayS text-content-primary bg-background-secondary w-full h-14 rounded-lg text-center" value="100" required>
+                    </div>
+            </div>
+
+            <!-- Botão que pergunta se quer ou não que os números se repitam -->
+                <div class="flex gap-2 items-center ">
+                    <label for="repetir">
+                        <input type="checkbox" id="repetir" class="hidden" required>
+                        <div class="checkbox"><div class="circulo"></div></div>
+                    </label>
+                    <p class="text-content-primary pS">Não repetir número</p>
+                </div>
+            </div>
+
+            <!-- Botão de enviar -->
+            <button type="submit" class="h-[56px] w-full bg-background-tertiary text-content-primary lM flex items-center justify-center gap-2 rounded-lg">SORTEAR <img src="assets/Frame.svg"></button>
+        </form>
+
+        <!-- Perguntas frequentes -->
+        <div class="grid gap-9 questions">
+            <div class="flex gap-2 items-start">
+                <img src="assets/duvida.svg">
+                <div>
+                    <h4 class="pM text-content-brand">Como funciona o sorteador de números?</h4>
+                    <p class="pS text-content-secondary">O sorteador utiliza um algoritmo de geração aleatória para criar números dentro do intervalo especificado pelo usuário.</p>
+                </div>
+            </div>
+
+            <div class="flex gap-2 items-start">
+                <img src="assets/duvida.svg">
+                <div>
+                    <h4 class="pM text-content-brand">Posso escolher o intervalo dos números?</h4>
+                    <p class="pS text-content-secondary">Sim, você pode definir os valores mínimo e máximo para o intervalo dos números sorteados.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

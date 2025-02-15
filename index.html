@@ -70,12 +70,12 @@
         </form>
 
         <!-- Números sorteados -->
-        <form class="flex flex-col gap-10 justify-center items-center md:w-[350px] text-center w-full hidden" id="sortedForm">
+        <form class="flex flex-col gap-10 justify-center items-center md:w-[350px] md:h-[500px] h--full text-center w-full hidden" id="sortedForm">
             <div>
                 <h3 class="lM text-content-primary">RESULTADO DO SORTEIO</h3>
                 <p class="text-content-secondary overlineT" id="results"></p>
             </div>
-            <div class="grid gap-6" id="numbersSorted-container"></div>
+            <div class="grid gap-6 overflow-y-auto max-h-[300px] md:pr-[10px] " id="numbersSorted-container"></div>
             
 
             <button type="submit" class="h-[56px] w-full bg-background-tertiary text-content-primary lM flex items-center justify-center gap-2 rounded-lg sort-again">SORTEAR NOVAMENTE <img src="assets/again.svg"></button>

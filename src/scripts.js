@@ -16,6 +16,15 @@ const results = document.getElementById('results')
 sortForm.onsubmit = (e) => {
     e.preventDefault()
 
+    if (Number(numero.value) > Number(ate.value) - Number(de.value) + 1 && checkbox.checked) {
+        numero.setCustomValidity('O número não pode ser maior que as possibilidades')
+        errorText.textContent = 'O número não pode ser maior que as possibilidades'
+        errorText.classList.remove('hidden')
+        console.log(Number(ate.value) - Number(de.value));
+        
+        return
+    }
+
     sort()
 }
 
@@ -94,7 +103,7 @@ function sort () {
             sorteados.push(numberSorted)
             criaElementos(numberSorted, i + 1)
             i++
-            setTimeout(sortStep, 1000) // Adiciona um tempo de 1 segundo para cada sorteio
+            setTimeout(sortStep, 200) // Adiciona um tempo de 0,2 segundos para cada sorteio
         }
     }
 
